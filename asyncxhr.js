@@ -5,7 +5,7 @@ class XHRResult {
         this.text = text;
     }
 
-    getObject() {
+    get object() {
         let res = {};
         try {
             res = JSON.parse(this.text);
