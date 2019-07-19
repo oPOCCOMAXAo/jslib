@@ -36,7 +36,7 @@ class AsyncXHR {
         }
         return new Promise(resolve => {
             xhr.onload = () => resolve(new XHRResult(xhr.status, xhr.responseText));
-            xhr.onerror = (e) => resolve(new XHRResult(-1, "", e);
+            xhr.onerror = (e) => resolve(new XHRResult(-1, "", e));
             xhr.send(data);
         });
     }
