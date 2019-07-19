@@ -1,8 +1,9 @@
 "use strict";
 class XHRResult {
-    constructor(status, text) {
+    constructor(status, text, error) {
         this.status = status;
         this.text = text;
+        this.error = error;
     }
 
     get object() {
@@ -35,6 +36,7 @@ class AsyncXHR {
         }
         return new Promise(resolve => {
             xhr.onload = () => resolve(new XHRResult(xhr.status, xhr.responseText));
+            xhr.onerror = (e) => resolve(new XHRResult(-1, "", e);
             xhr.send(data);
         });
     }
